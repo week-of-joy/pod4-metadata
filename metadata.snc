@@ -1,0 +1,27 @@
+"Metadata": {
+  "SNC::Parameter::Metadata": {
+  
+    "computeinfra_rgName": {
+      "datasource": "ServiceNow::Pools:: ResourceGroupPool.getByLDC"
+    },
+    
+    "computeinfra_hradwareType": {
+      "datasource": "ServiceNow::Pools:: HardwareTypePool.getHardwareTypeByLocation",
+      "datasourceFilter": {
+        "Location": "Location"
+      }
+    },
+    
+    "computeinfra_network": {
+      "datasource": "ServiceNow::Pools::NetworkPool.getObjectsByLDC"
+    },
+    
+    "computeinfra_subnet": {
+      "datasource": "ServiceNow::Pools:: SubnetPool.getObjectsByNetwork",
+      "datasourceFilter": {
+        "Network": "computeinfra_network"
+      }
+    }
+    
+  }
+}
